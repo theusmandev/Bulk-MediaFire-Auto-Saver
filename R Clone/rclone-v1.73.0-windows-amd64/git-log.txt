@@ -1,0 +1,914 @@
+commit f42aa5a586cc95cfa7747e52837ae2a84832b792
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 20:53:56 2026 +0000
+
+    Version v1.73.0
+
+commit 40f2e847a338cfd8e8970f9cbad89c9132d8a940
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Nov 24 15:11:00 2025 +0000
+
+    drive: fix crash when trying to creating shortcut to a Google doc
+    
+    Before this change, we uses an unguarded type assertion which failed
+    when NewObject returned a google document instead of an Object.
+    
+    This change uses the ID() method to read the id which works for all
+    types of file instead and returns a sensible error if one isn't found.
+    
+    Fixes #8990
+
+commit 846f193806877b11c35e23cfd45223ed8e11c117
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Nov 25 17:00:11 2025 +0000
+
+    azureblob,azurefiles: factor the common auth into a library
+
+commit 116d0f37081a50b1f27bc9a5505b9fa8958c6d4a
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 1 15:15:17 2025 +0000
+
+    test: allow backends to return fs.ErrorCantListRoot to skip Root tests
+
+commit 140ec62683b9729070cf00b433a0d2564f0fe3db
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Dec 4 16:56:46 2025 +0000
+
+    build: add privatebeta Makefile target
+
+commit 8c746f36ddcd253c229fd9e0740cb7a9516dbe8c
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 17:38:13 2026 +0000
+
+    docs: add Internxt as a sponsor
+
+commit fac7ba4bd0e74ba1c5c49c2480b85dd0477265b0
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 17:28:52 2026 +0000
+
+    internxt: remove use of CVE laden github.com/disintegration/imaging
+
+commit e3be333c29a75e1f54b5c87e8a71c2d7993179ff
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:57:48 2026 +0000
+
+    docs: fix Internxt docs after merge
+
+commit 67013ccf35a5cc588fa507762f92cd54c7e04298
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 20 17:59:16 2026 +0000
+
+    docs: update making a new backend docs
+
+commit a1522468db33a421e1b149e2a3c3187819bd8e7b
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 20 17:41:37 2026 +0000
+
+    docs: build overview page from the backend data
+
+commit 58f30ab538d084aa9ce06880067f9ef08258ae84
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 14 18:37:00 2026 +0000
+
+    docs: add tiering to the documentation - fixes #8873
+
+commit 7539b2c5e11da16ac24d2fed1eede1b01db1c12d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 20 15:58:04 2026 +0000
+
+    docs: add data about each backend in YAML format
+
+commit 6d39c6398385696c1f55b55d1d3692df1ad49e19
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 20 17:43:38 2026 +0000
+
+    docs: add bin/manage_backends.py for managing the backend data files
+
+commit 1bf73d862a037f3ba2b729d242612a99279f0cf7
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:32:50 2026 +0000
+
+    internxt: use rclone's http.Client to enable more features
+    
+    e.g. --bwlimit, HTTP proxies, connection timeouts, --dump headers/bodies etc
+
+commit e2a079d73f734638a03d021c81d53b389b1be0e4
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:05:46 2026 +0000
+
+    internxt: fix lint problems
+
+commit 7d7f82854fcd9a7026d6317f9ddfb2677abf8a1f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:06:11 2026 +0000
+
+    Add StarHack to contributors
+
+commit b6113a505f62c3022c29ffb24cf6c069049dacef
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:06:11 2026 +0000
+
+    Add lullius to contributors
+
+commit 2a754ef2faa29fa5d423adfe93b74e693657c1ff
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 30 16:06:11 2026 +0000
+
+    Add jzunigax2 to contributors
+
+commit 85d13c4e34994ca23e5ce43dec8dadc1b9dd2aa2
+Author: jzunigax2 <125698953+jzunigax2@users.noreply.github.com>
+Date:   Tue Jan 27 19:08:22 2026 -0600
+
+    internxt: add Internxt backend - fixes #7610
+    
+    Co-Authored-By: lullius <lullius@users.noreply.github.com>
+    Co-Authored-By: StarHack <StarHack@users.noreply.github.com>
+
+commit 49b4ca3412b5db48364c35f372ec68dd29e54068
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Nov 18 16:33:01 2025 +0000
+
+    drive: add --drive-metadata-force-expansive-access flag - Fixes #8980
+    
+    This allows the permissions changes happening in Feb 2026 to be tested
+    in advance.
+
+commit 315a148820d7ea597ce3af1c829db859a5d5f3be
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 11:41:24 2026 +0000
+
+    test_all: allow drime more time to complete
+
+commit b873f838dbc7d20add10edba4e631d198b752624
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 21:00:48 2026 +0000
+
+    onedrive: fix permissions on onedrive Personal
+
+commit 1d6f86900b7ff96ec668f089e9ef7ee5d297df23
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 17:57:01 2026 +0000
+
+    onedrive: fix require sign in for Onedrive Personal
+    
+    require_sign_in and regain_inherited_permissions in Onedrive Personal
+    have been brought into line with Onedrive Business.
+
+commit 8a31921fb01129c8045e44be02752888c00655dc
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 17:54:07 2026 +0000
+
+    onedrive: Onedrive Personal no longer supports description
+    
+    Uploading files with description set is no longer allowed with
+    Onedrive personal. This brings it into line with Onedrive business.
+
+commit c64161822d3ed555171adacb7734441eb1167d33
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 12:25:37 2026 +0000
+
+    onedrive: fix setting modification time on directories for onedrive Personal
+    
+    Onedrive Personal started ignoring the time parameters given to create
+    directory in the same way as onedrive Business.
+
+commit d660960775fe2c3b16fc916bf3377906f31e4a74
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Jan 29 11:55:46 2026 +0000
+
+    onedrive: fix cancelling multipart upload
+    
+    Before this change it was giving back "401 Unauthorized" however
+    removing the "Authorization: XXXX" from the request fixes the problem
+    as the auth is in the URL already.
+
+commit 761563609393f3eae0ebef93da86da240aaf99d9
+Author: Duncan Smart <duncan.smart@gmail.com>
+Date:   Thu Jan 29 10:27:24 2026 +0000
+
+    docs: fix WinFsp link in mount documentation
+
+commit cc9abcad0682e93e48b64b820f83dc727b9f2da8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Sep 1 13:49:56 2020 +0100
+
+    cmount: make work under OpenBSD - fixes #1727
+
+commit 5c4af237e45d2c94831ff4464a796ee18119fd32
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Sep 1 13:49:09 2020 +0100
+
+    vfs: make mount tests run on OpenBSD
+
+commit 90a57da9d5bfa9cdcab23df243053af357afd180
+Author: albertony <12441419+albertony@users.noreply.github.com>
+Date:   Thu Jan 29 09:01:19 2026 +0100
+
+    docs: improve alignment of icons
+
+commit 824257583c846f5691bf61e9f9be950ad03dc845
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 27 17:45:34 2026 +0000
+
+    protondrive: update to use forks of upstream modules
+    
+    This updates rclone to use forks of the upstream proton drive modules
+    in preparation for making changes.
+    
+    The go-proton-api modules has had changes from master merged so rclone
+    and Proton-API-Bridge are using the same version.
+
+commit cd857754c76e3f092022aa441ebb2fc4ea1dfcd8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 28 11:38:31 2026 +0000
+
+    Add hyusap to contributors
+
+commit 017d930dfceed5f1e720a3c10f0c590958dd3c9d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 28 11:38:31 2026 +0000
+
+    Add Nick Owens to contributors
+
+commit 6ed68883fe8c298a1d11e28234f8d50b5460e117
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 28 11:38:31 2026 +0000
+
+    Add Mikel Olasagasti Uranga to contributors
+
+commit 2a5e0b28c925feaa51d95c06bb4f556af0040802
+Author: hyusap <paulayush@gmail.com>
+Date:   Tue Jan 13 23:28:18 2026 +0000
+
+    docs: fix googlephotos custom client_id instructions
+    
+    The Google Photos custom client_id documentation was incomplete - it
+    only mentioned changing the scopes but did not mention that you need
+    to enable the "Photos Library API" instead of the "Google Drive API"
+    in step 3 of the referenced Google Drive instructions.
+    
+    This fixes the documentation to clearly state both differences from
+    the Google Drive setup:
+    - Enable "Photos Library API" instead of "Google Drive API"
+    - Use the Google Photos specific scopes
+    
+    Co-authored-by: hyusap <paulayush@gmail.com>
+
+commit 264e75d892f98973e2a30000503d684baa9e5e11
+Author: Nick Owens <mischief@offblast.org>
+Date:   Tue Jan 27 05:47:00 2026 -0800
+
+    cmount: fix OpenBSD mount support.
+    
+    this pulls in https://github.com/winfsp/cgofuse/pull/100 to fix OpenBSD
+    mount support.
+    
+    part of #1727
+
+commit 4553c3de7ba091ac2b3cf8976e94ae179640ca37
+Author: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+Date:   Fri Jan 23 17:41:52 2026 +0100
+
+    fs: fix bwlimit: correctly report minutes
+    
+    Signed-off-by: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+
+commit 2e9e4a47a2a8c553f7630b300cd1efb079dc2c38
+Author: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+Date:   Fri Jan 23 17:41:29 2026 +0100
+
+    fs: fix bwlimit: use %d instead of %q for ints
+    
+    Signed-off-by: Mikel Olasagasti Uranga <mikel@olasagasti.info>
+
+commit e44829a448f9d5e223c96eb0f0d6bfc51a3d9e61
+Author: necaran <55765083+necaran@users.noreply.github.com>
+Date:   Sat Jan 24 03:50:04 2026 +0800
+
+    mega: reverts TLS workaround
+    
+    The workaround to include the obsolete cipher suite is no longer needed because storage endpoints now support TLS1.3.
+
+commit 6b9f77459ae24b056a30591c3204531b48555c3d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 23 16:55:52 2026 +0000
+
+    docs: fix formatting
+
+commit 4b2c39c58502820089da3fd278c6edecf21087be
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 23 15:39:32 2026 +0000
+
+    docs: add faq entry about re-enabling old TLS ciphers
+
+commit dbf2499d85897674676bf3ac61a1000479e3a068
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 23 15:39:56 2026 +0000
+
+    Add Marc-Philip to contributors
+
+commit 760a134c956056044e9ed858d95b9142be602e5f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 23 15:39:56 2026 +0000
+
+    Add yy to contributors
+
+commit 63cfe260a26a40c2d21fa4f1dbccb012f1d7e756
+Author: Enduriel <endur1el@protonmail.com>
+Date:   Mon Jan 19 08:27:11 2026 +0100
+
+    filen: swap to blake3 hashes
+
+commit 3550275cd36db542e6e0a14281c1d35337e2bb17
+Author: Marc-Philip <marc-philip.werner@sap.com>
+Date:   Sun Jan 18 20:56:26 2026 +0100
+
+    docs: fix echo command syntax for password input
+
+commit b728929f4469c4ef48db30709515f545b55022cf
+Author: yy <yhymmt37@gmail.com>
+Date:   Mon Jan 19 04:48:33 2026 +0900
+
+    docs: fix typos in comments and messages
+
+commit 9ec918f1374630e7d4614389ca013c0c0bd452a1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 14 18:35:51 2026 +0000
+
+    docs: fix use of removed rem macro
+
+commit 3a9c7ceeb1752dcb5826e48355db8930db3c69d3
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 14 15:31:46 2026 +0000
+
+    uptobox: remove backend as service is no longer available
+    
+    Uptobox was shutdown in September 2023 and does not appear to be
+    returning.
+
+commit 5502c0f8ae6b6812a7deb5c7581ba6a7004fcba1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 14 12:18:45 2026 +0000
+
+    rc: add operations/hashsumfile to sum a single file only
+
+commit d707ae7cf47dae98c257d657077c2d55ad56af59
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Jan 14 12:27:54 2026 +0000
+
+    docs: update sponsor link
+
+commit 9bef7f0dbf70222d2a7da6c4afb8981423100982
+Author: Enduriel <endur1el@protonmail.com>
+Date:   Mon Jan 12 15:45:48 2026 +0100
+
+    filen: add Filen backend - Fixes #6728
+
+commit 933bbf3ac835ff58cc2ad565e0ed48d5ecc54047
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 9 12:44:11 2026 +0000
+
+    sftp: fix proxy initialisation
+    
+    This was being done in NewFs instead of NewFsWithConnection like it
+    should have been which meant calls to NewFsWithConnection were not
+    initialising the proxy correctly.
+
+commit ecc5972d6fc738bb8637663aafa2d74c5e642032
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 9 12:43:26 2026 +0000
+
+    fstest: skip Copy mutation test with --sftp-copy-is-hardlink
+
+commit 07805796ab415e8058188756947e4ee2401235e2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 9 12:33:31 2026 +0000
+
+    fstest: Make Copy mutation test work properly
+    
+    Before this change it could miss a mutation if the Modtime was cached
+
+commit 189e6dbf6adc0b4ca9e2e770c99a15f132eee4f8
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 13 12:40:12 2026 +0000
+
+    Add Qingwei Li to contributors
+
+commit d47e289165bed0efe86f736ca09ce2ce1dcb6447
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Jan 13 12:40:12 2026 +0000
+
+    Add Nicolas Dessart to contributors
+
+commit e51a0599a0ee226865994749c5f95bfe70a1af49
+Author: dougal <147946567+roucc@users.noreply.github.com>
+Date:   Fri Jan 9 16:30:01 2026 +0000
+
+    log: fix systemd adding extra newline - fixes #9086
+    
+    This was broken in v1.71.0 as a typo.
+
+commit 530a901de3cf62d81639229c8299ace39a8da5a7
+Author: Qingwei Li <332664203@qq.com>
+Date:   Sat Jan 10 00:10:02 2026 +0800
+
+    oracleobjectstorage, sftp: eliminate unnecessary heap allocation
+    
+    Move the declaration location of variables to eliminate heap
+    allocation which may make rclone faster and reduce memory usage slightly.
+    
+    Fixes #9078
+
+commit a64a8aad0e2d52026a91ad534dd0968716053244
+Author: Nicolas Dessart <nds@outsight.tech>
+Date:   Wed Jun 25 09:48:32 2025 +0200
+
+    sftp,ftp: add http proxy authentication support
+    
+    This change supports the `http://user:pass@host:port` syntax for the
+    http_proxy setting.
+
+commit 6529d2cd8ffbd0abe834050ceea5ebc9076b5192
+Author: dougal <dougal.craigwood@gmail.com>
+Date:   Wed Dec 3 16:43:04 2025 +0000
+
+    Add Drime backend
+    
+    Co-Authored-By: Nick Craig-Wood <nick@craig-wood.com>
+
+commit d9895fef9d9e45d5caf491d02a225c84628ec69f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 17:55:59 2025 +0000
+
+    lib/rest: add opts.MultipartContentType to explicitly set Content-Type of attachements
+    
+    Before this the standard library set it to application/octet-stream for some reason
+
+commit 8c7b7ac89140c726777923a2e01ba885814db882
+Author: dougal <dougal.craigwood@gmail.com>
+Date:   Mon Dec 8 17:12:25 2025 +0000
+
+    dircache: allow empty string as root parent id
+    
+    This was causing an internal error with the drime backend which has the
+    root parent id as an empty string. This shouldn't affect anything else.
+
+commit f8144985610a58f50a6ee7ff5ed1e9b0484a1724
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Jan 2 12:32:42 2026 +0000
+
+    docs: update sponsors
+
+commit 5f4e4b1a200708f5f36999a9d289823b742e4fd3
+Author: vupn0712 <126212736+vupn0712@users.noreply.github.com>
+Date:   Tue Jan 6 21:56:49 2026 +0700
+
+    s3: add provider Bizfly Cloud Simple Storage
+    
+    Co-authored-by: sys6101 <csvmen@gmail.com>
+
+commit 28c187b9b49a9785a7f47a802c74e8a8aedf11c6
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 31 17:03:19 2025 +0000
+
+    docs: update sponsor logos
+
+commit e07afc46455ba8979e9d589f2194e58a88202931
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 31 17:03:57 2025 +0000
+
+    Add sys6101 to contributors
+
+commit 08932ab92a3c399b50e24c56a1b40fdf6161088c
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 31 17:03:57 2025 +0000
+
+    Add darkdragon-001 to contributors
+
+commit 356ee57edbb59dd2fa3b403cb5e65a3db403612d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 31 17:03:57 2025 +0000
+
+    Add vupn0712 to contributors
+
+commit 7c1660214d68c10f622951416148b7616e55bed1
+Author: yuval-cloudinary <46710068+yuval-cloudinary@users.noreply.github.com>
+Date:   Mon Dec 22 23:39:53 2025 +0200
+
+    docs: add cloudinary to readme
+
+commit 51b197c86fdeb02a322ba124739f631aaede09e1
+Author: darkdragon-001 <darkdragon-001@users.noreply.github.com>
+Date:   Sun Dec 21 12:23:59 2025 +0100
+
+    docs: fix headers hierarchy in mount docs
+
+commit 029ffd2761ceea680feec9fee9143f049ea3a565
+Author: vupn0712 <126212736+vupn0712@users.noreply.github.com>
+Date:   Sat Dec 20 21:42:00 2025 +0700
+
+    s3: fix Copy ignoring storage class
+    
+    Co-authored-by: sys6101 <csvmen@gmail.com>
+
+commit f81cd7d2797aa1917e3763a330c1933db1b2dd90
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 17 16:49:04 2025 +0000
+
+    serve s3: make errors in --s3-auth-key fatal - fixes #9044
+    
+    Previously if auth keys were provided without a comma then rclone
+    would only log an INFO message which could mean it went on to serve
+    without any auth.
+    
+    The parsing for environment variables was changed in v1.70.0 to make
+    them work properly with multiple inputs. This means the input is
+    treated like a mini CSV file which works well except in this case when
+    the input has commas. This meant `user,auth` without quotes is treated
+    as two key pairs `user` and `quote`. The correct syntax is
+    `"user,auth"`. This updates the documentation accordingly.
+
+commit 1a0a4628d7f656bdc7484b40b0ae12d039cfe7b6
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Thu Dec 18 10:16:28 2025 +0000
+
+    Add masrlinu to contributors
+
+commit c10a4d465c8a9dbf87dd90b6350cc6c308349265
+Author: masrlinu <masrlinu@users.noreply.github.com>
+Date:   Wed Dec 17 16:13:25 2025 +0100
+
+    pcloud: add support for real-time updates in mount
+    
+    Co-authored-by: masrlinu <5259918+masrlinu@users.noreply.github.com>
+
+commit 3a6e07a61365859c3397586d80d9d48379be1956
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Dec 14 12:41:33 2025 +0000
+
+    memory: add --memory-discard flag for speed testing - fixes #9037
+
+commit c36f99d343ecc593408268745626d9971256fb04
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 17 10:20:59 2025 +0000
+
+    Add vyv03354 to contributors
+
+commit 3e21a7261b472bd79c36df5a29a0cf685a39bcb7
+Author: jhasse-shade <jacob@shade.inc>
+Date:   Tue Dec 16 12:21:22 2025 -0500
+
+    shade: Fix VFS test issues
+
+commit fd439fab623067e71559c367c3ca3871530e18f0
+Author: vyv03354 <VYV03354@nifty.ne.jp>
+Date:   Mon Dec 15 17:11:00 2025 +0900
+
+    docs: mention use of ListR feature in ls docs
+
+commit 976aa6b41680211e06b2821e67ef92de10c376e2
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Dec 12 22:05:36 2025 +0000
+
+    build: bump actions/download-artifact from 6 to 7
+    
+    Bumps [actions/download-artifact](https://github.com/actions/download-artifact) from 6 to 7.
+    - [Release notes](https://github.com/actions/download-artifact/releases)
+    - [Commits](https://github.com/actions/download-artifact/compare/v6...v7)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: actions/download-artifact
+      dependency-version: '7'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit b3a0383ca3175b7b2366c072d245fac84fbcf54f
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Fri Dec 12 22:05:32 2025 +0000
+
+    build: bump actions/upload-artifact from 5 to 6
+    
+    Bumps [actions/upload-artifact](https://github.com/actions/upload-artifact) from 5 to 6.
+    - [Release notes](https://github.com/actions/upload-artifact/releases)
+    - [Commits](https://github.com/actions/upload-artifact/compare/v5...v6)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: actions/upload-artifact
+      dependency-version: '6'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit c13f12933994c92094398dcbee047ee5eb17d81c
+Author: dependabot[bot] <49699333+dependabot[bot]@users.noreply.github.com>
+Date:   Thu Dec 11 22:05:17 2025 +0000
+
+    build: bump actions/cache from 4 to 5
+    
+    Bumps [actions/cache](https://github.com/actions/cache) from 4 to 5.
+    - [Release notes](https://github.com/actions/cache/releases)
+    - [Changelog](https://github.com/actions/cache/blob/main/RELEASES.md)
+    - [Commits](https://github.com/actions/cache/compare/v4...v5)
+    
+    ---
+    updated-dependencies:
+    - dependency-name: actions/cache
+      dependency-version: '5'
+      dependency-type: direct:production
+      update-type: version-update:semver-major
+    ...
+    
+    Signed-off-by: dependabot[bot] <support@github.com>
+
+commit 748d8c8957104890ac3e12c5db8030bc95429140
+Author: vyv03354 <VYV03354@nifty.ne.jp>
+Date:   Fri Dec 12 04:32:53 2025 +0900
+
+    docs: reflects the fact that pCloud supports ListR
+
+commit 4d379efcbbf44d33d895c46c7a26903a5b7b1a23
+Author: jbagwell-akamai <113531113+jbagwell-akamai@users.noreply.github.com>
+Date:   Thu Dec 11 11:20:34 2025 -0600
+
+    S3: Linode: updated endpoints to use ISO 3166-1 alpha-2 standard
+    
+    ISO 3166-1 alpha-2 standard for countries and region short name in parentheses instead of separated by another comma
+
+commit e5e6a4b5aebba4e33e86ee3506174997c12d1bad
+Author: dougal <147946567+roucc@users.noreply.github.com>
+Date:   Wed Dec 10 15:43:22 2025 +0000
+
+    sync: fix error propagation in tests (#9025)
+    
+    This commit fixes the sync transform test IO errors by resetting the
+    error flag which stops subsequent tests failing.
+
+commit df18e8c55b7d09254a93abcc79f2dc4b4186a696
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 10 15:31:02 2025 +0000
+
+    Changelog updates from Version v1.72.1
+
+commit f4e17d8b0b6f780be1c5f8602e992cc9d00ab239
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 10 12:14:08 2025 +0000
+
+    s3: add more regions for Selectel
+
+commit e5c69511bc3e5d107d05353228e2300483c2cbfa
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Dec 10 15:31:21 2025 +0000
+
+    Add jhasse-shade to contributors
+
+commit 175d4bc5532b1dd1e954f27bbd11bd1fec17d5f5
+Author: jhasse-shade <jacob@shade.inc>
+Date:   Tue Dec 9 12:08:57 2025 -0500
+
+    Add Shade backend
+
+commit 4851f1796c10c4d21be6fe890569b42230ee4e42
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 9 16:35:07 2025 +0000
+
+    log: fix backtrace not going to the --log-file #9014
+    
+    Before the log re-organisation in:
+    
+    8d353039a694fb27 log: add log rotation to --log-file
+    
+    rclone would write any backtraces to the --log-file which was very
+    convenient for users.
+    
+    This got accidentally disabled due to a typo which meant backtraces
+    started going to stderr even if --log-file was supplied.
+    
+    This fixes the problem.
+
+commit 4ff8899b2c0b16c8753a27f8d9d124794dfd1124
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 9 16:14:26 2025 +0000
+
+    build: fix lint warning after linter upgrade
+
+commit 8f29a0b0a1b967e71ac4c140256b67535ad6a8fd
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 9 16:15:07 2025 +0000
+
+    Add Jonas Tingeborn to contributors
+
+commit 8b0e76e53b91de5cacf67cca4385e02666cd517f
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Tue Dec 9 16:15:07 2025 +0000
+
+    Add Tingsong Xu to contributors
+
+commit 233fef5c4de64b1902df4ae23c60e9f01bd55dce
+Author: Jonas Tingeborn <134889+jojje@users.noreply.github.com>
+Date:   Sat Dec 6 07:31:20 2025 +0100
+
+    configfile: add piped config support - fixes #9012
+
+commit b9586c3e0392ec67e0f7ccc30ec8e1a6ddc7ba6f
+Author: Tingsong Xu <tingsong.xu@rightcapital.com>
+Date:   Mon Dec 8 14:05:19 2025 +0800
+
+    fs/log: fix PID not included in JSON log output
+    
+      When using `--log-format pid,json`, the PID was not being added to the JSON log output. This fix adds PID support to JSON logging.
+
+commit 0dc0ab13302515ede4e54d97b8a9d117d05df5f1
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:43:49 2025 +0000
+
+    build: adjust lint rules to exclude new errors from linter update
+
+commit a6bbdb35a0a2bd5c4b4b43253b3cc98ad029b752
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 12:32:04 2025 +0000
+
+    proxy: fix error handling in tests spotted by the linter
+
+commit b33cb77b6cddb22aa8ee1c3a9053c9dff2401329
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:44:40 2025 +0000
+
+    Add Johannes Rothe to contributors
+
+commit d51322bb5fa117954d5675f69e3e41f642be88ac
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:44:40 2025 +0000
+
+    Add Leo to contributors
+
+commit e718ab60914b60e64ff7d832fd9384c13d991ba3
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:44:40 2025 +0000
+
+    Add Vladislav Tropnikov to contributors
+
+commit 0a9e6e130fb8204faadec1f5b907478fb7d4ea3d
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:44:40 2025 +0000
+
+    Add Cliff Frey to contributors
+
+commit 3358b9049c216f489bf160aeecaa18d5af651efb
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Mon Dec 8 14:44:40 2025 +0000
+
+    Add vicerace to contributors
+
+commit 847734d421d219f1b12b144fcb0d08a6556e1485
+Author: DianaNites <5275194+DianaNites@users.noreply.github.com>
+Date:   Tue Dec 2 15:13:00 2025 -0600
+
+    b2: Fix listing root buckets with unrestricted API key
+    
+    Fixes previous pull request #8978
+    
+    An oversight meant that unrestricted API keys
+    never called b2_list_buckets,
+    meaning the root remote could not be listed.
+    
+    The call is now made in the event there are no allowed buckets,
+    indicating an unrestricted API key
+    
+    Fixes #9007
+
+commit f7b255d4ec760e4d1fe28fe2f064bb02261207b4
+Author: Johannes Rothe <mail@johannes-rothe.de>
+Date:   Thu Nov 27 22:07:26 2025 +0100
+
+    googlecloudstorage: improve endpoint parameter docs
+    
+    When specifying a custom endpoint with a subpath, there is a limitation
+    in the Google cloud storage integration that the subpath is ignored
+    during upload operations. For example with the custom endpoint
+    "example.org/custom/endpoint" on upload the /custom/endpoint is not
+    reflected.
+    
+    As this is most likely an issue with the underlying API client, there is
+    no way to fix this in rclone. By extending the documentation at least
+    rclone users are made aware of this limitation.
+    
+    Related forum thread: https://forum.rclone.org/t/googlecloudstorage-custom-endpoint-subpath-removed-for-upload/53059
+
+commit 24c752ed9e48d3d409f4a380f1bda536deef962b
+Author: Leo <i@hardrain980.com>
+Date:   Mon Dec 1 11:17:10 2025 +0800
+
+    serve webdav: implement download-directory-as-zip
+    
+    Signed-off-by: Leo <i@hardrain980.com>
+
+commit a99d155fd4e091504ded67a36ea3111b0e765f5d
+Author: Vladislav Tropnikov <vtr.name@gmail.com>
+Date:   Sat Nov 29 14:53:00 2025 +0100
+
+    s3: The ability to specify an IAM role for cross-account interaction
+
+commit f72b32b4709bffef392f7bf5e22f4bfb9910e9f6
+Author: Cliff Frey <cliff@openai.com>
+Date:   Thu Nov 27 08:58:07 2025 -0800
+
+    azureblob: add metadata and tags support across upload and copy paths
+    
+    This change adds first-class metadata support to the Azure Blob backend,
+    including headers, user metadata, tags, and modtime overrides, and wires
+    it through uploads and server-side copies.
+    
+    There is a behavior change in that rclone will now set the "mtime"
+    custom metadata when doing server side copies to azure and the
+    `--metadata` argument is given.
+    
+    - Map standard headers: cache-control, content-disposition, content-encoding,
+      content-language, content-type to corresponding x-ms-blob-* HTTP headers.
+    - Map user metadata: any non-reserved keys (excluding x-ms-*) are sent as
+      blob user metadata. Keys are normalized to lowercase for consistency.
+    - Support tags: parse `x-ms-tags` as a comma-separated list of key=value
+      pairs and apply them on uploads and copies.
+    - Support mtime override: accept `mtime` in metadata (RFC3339/RFC3339Nano)
+      to override the stored modtime persisted in user metadata.
+
+commit 9be7f99bf8287084a91b8a6e3fd554f23e2c1658
+Author: vicerace <vicerace@sohu.com>
+Date:   Tue Nov 25 18:26:16 2025 +0800
+
+    refactor: use strings.Cut to simplify code
+    
+    Signed-off-by: vicerace <vicerace@sohu.com>
+
+commit 6858bf242ef3daef7d19d5b09bf41f6f44ddf455
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 26 12:18:38 2025 +0000
+
+    docs: note where a provider has an S3 compatible alternative
+
+commit e8c6867e4c2b3ddf64e98c4fa48a619957471bdf
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 26 12:00:00 2025 +0000
+
+    Add Shade as sponsor
+
+commit 50fbd6b04915e11fd9a05aebc9e1e7f942c110f2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 26 12:22:29 2025 +0000
+
+    Add Duncan Smart to contributors
+
+commit 0783cab952454dc10f9ebf3428fff9ceae8712c9
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Wed Nov 26 12:22:29 2025 +0000
+
+    Add Diana to contributors
+
+commit 886ac7af1d1ca83bd1425a64f8b5e17b43037f54
+Author: Duncan Smart <duncan.smart@gmail.com>
+Date:   Sun Nov 23 15:08:40 2025 +0000
+
+    docs: Clarify OAuth scopes for readonly Google Drive access
+
+commit 3c40238f020d47ffb6f2f2dac24343048d1d1226
+Author: Diana <5275194+DianaNites@users.noreply.github.com>
+Date:   Mon Nov 24 09:46:41 2025 -0600
+
+    b2: support authentication with new bucket restricted application keys
+    
+    Backblaze has updated its b2_authorize_account API endpoint, newly created
+    application keys are now "multi-bucket" keys, capable of being limited to
+    multiple buckets. These keys can only be used with the v4 endpoint, not v1 which
+    returns an HTTP 400.
+    
+    This commit switches authorization to the v4 endpoint, and allowing such keys to
+    work with any of the allowed buckets.
+    
+    With multi-bucket keys, missing restricted buckets can be non-fatal.
+    
+    Supports listing root with multi-bucket API keys
+
+commit 46ca0dd7fe62ef2524d0f81238d99f492bcc2840
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Sun Nov 23 11:30:29 2025 +0000
+
+    docs: update sponsor logos
+
+commit 2e968e7ce00927b52b2a2349dc9d6b6a80efb4d2
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Nov 21 18:23:16 2025 +0000
+
+    docs: fix lint error in changelog
+
+commit 1886c552db8d5c530936e9d6ae97d872d0662e52
+Author: Nick Craig-Wood <nick@craig-wood.com>
+Date:   Fri Nov 21 18:23:07 2025 +0000
+
+    Start v1.73.0-DEV development
