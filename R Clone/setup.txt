@@ -1,0 +1,37 @@
+Rclone Setup (Step-by-Step)
+Command Prompt (CMD) kholen aur ye likhen: rclone config
+
+n dabayen (New remote bananay ke liye).
+
+name> ki jagah likhen: gdrive (Yahi naam hamari .bat file mein hai).
+
+Storage Type ki list aaye gi. Wahan drive dhoonden (aksar number 17 ya 18 hota hai) aur wo number likh kar Enter dabayen.
+
+Client ID aur Client Secret ko khali chor den (Enter dabate jayen).
+
+Scope mein 1 select karen (Full access to Drive).
+
+Service Account File ko khali chor den (Enter dabayen).
+
+Edit advanced config? mein n dabayen.
+
+Use auto-config? mein y dabayen.
+
+Browser Verification
+Ab aapka browser khulega. Apna wo Google account select karen jahan novels upload karne hain.
+
+"Allow" par click karen.
+
+Browser par "Success!" likha aaye ga, usay band kar den.
+
+Aakhri Steps (CMD mein)
+Configure this as a Shared Drive? mein n dabayen.
+
+Keep this "gdrive" remote? mein y dabayen.
+
+Phir q daba kar config se bahar aa jayen.
+
+Ab Dobara Check Karen
+Ab apni .bat file ko dobara run karen. InshaAllah ab aapko ye error nahi aaye ga aur upload shuru ho jaye ga.
+
+Zaroori Point: Agar aapne setup ke dauran gdrive ki jagah koi aur naam rakha tha (maslan my_drive), to aapko apni .bat file mein bhi wahi naam tabdeel karna hoga.
