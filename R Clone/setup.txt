@@ -32,6 +32,30 @@ Keep this "gdrive" remote? mein y dabayen.
 Phir q daba kar config se bahar aa jayen.
 
 Ab Dobara Check Karen
-Ab apni .bat file ko dobara run karen. InshaAllah ab aapko ye error nahi aaye ga aur upload shuru ho jaye ga.
+Ab apni .bat file ko dobara run karen.
 
-Zaroori Point: Agar aapne setup ke dauran gdrive ki jagah koi aur naam rakha tha (maslan my_drive), to aapko apni .bat file mein bhi wahi naam tabdeel karna hoga.
+
+
+
+
+
+
+Rclone with Parallel Transfers (Fastest Tweak)
+Rclone khud bohat fast ho sakta hai agar aap default settings ko customize karein. By default, rclone 4 files ek sath upload karta hai. Aap isay barha sakte hain:
+
+Command: rclone copy "C:\folder" mydrive: -P --transfers 10 --checkers 16
+
+Faida: Ye ek waqt mein 10 files upload karega, jis se speed behtar ho jati hai agar aapka internet fast hai.
+
+
+
+
+
+
+
+
+
+Ek Choti si Tip:
+Agar aapka net bar bar disconnect ho raha ho, toh command ke aakhir mein ye do cheezain add kar dein: --retries 10 --low-level-retries 10
+
+Is se rclone khud hi 10 baar dobara connect karne ki koshish karega, aapko baar baar command nahi likhni paray gi.
